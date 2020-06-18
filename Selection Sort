@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
+
+
+
+int main(){
+
+
+//10 elemanlı bir diziyi siralama.
+
+int array[10]; // 10 elemanlı dizi tanımlaması.
+
+srand(time(NULL)); // her çalışmada random değer vermesi için tanımlama.
+
+int i = 0; // döngü için değişken.
+
+printf("Rastgele atanan dizi su sekildedir:\n\n");
+
+
+// diziye rastgele değer atamak için for döngüsü başlangıcı.
+for(; i <= 10; i ++){
+
+    if(i < 10)
+
+         array[i] = rand() % 500; // dizinin 1-10 değer aralıklarına max. 500 değerler atama işlemi.
+
+    else if (i = 10) // i'nin 10'a eşit olması durumunda 
+    {                // Dizi'yi ekrana yazma komutu.
+        int j = 0;
+
+            for(; j < 10; j ++){ 
+
+             printf("%d ",array[j]);
+
+            }
+    }
+    
+  } // Diziye eleman atayan ve dizi elemanlarını gösteren döngünün sonu.
+
+printf("\n\n-----------\n\n");
+
+
+
+int temp,j,k;
+int min_index;
+
+
+    // Selection Sort algoritması için döngü başlangıcı.
+    for ( k = 0; k < 10 ; k++)
+    {
+        min_index  = k;
+
+             for ( j = k; j < 10; j++)
+             {   
+                 if (array[j] < array[min_index])
+                     min_index = j;
+
+             }
+
+         temp = array[k];
+         array[k] = array[min_index];
+         array[min_index] = temp;
+    
+    } // Selection Sort algoritması için döngü bitişi.
+
+
+int m;
+for ( m = 0; m < 10; m++)
+{
+    printf("%d ",array[m]);
+}
+
+printf("\n\n");
+
+
+    return 0;
+}
+
